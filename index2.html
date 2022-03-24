@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" type="text/css" href="style2.css" /> -->
+    <title>Skills Bar</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .bar {
+      display: flex;
+      height: 300px;
+      width: 300px;
+      flex-wrap: wrap;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .btns {
+      display: flex;
+      height: 200px;
+      width: 200px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* transform: translate(50%, 39%); */
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .progress-bar {
+      /* background-color: #ddd; */
+      height: 150px;
+      width: 150px;
+      padding: 10px;
+      /* border-radius: 50%; */
+      place-items: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .first {
+      height: 40px;
+      width: 40px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .second {
+      height: 40px;
+      width: 40px;
+      background-color: yellow;
+      border-radius: 50%;
+    }
+
+    .third {
+      height: 40px;
+      width: 40px;
+      background-color: blue;
+      border-radius: 50%;
+    }
+
+    .fourth {
+      height: 40px;
+      width: 40px;
+      background-color: green;
+      border-radius: 50%;
+    }
+  </style>
+
+  <body>
+    <div class="bar">
+      <div class="progress-bar">
+        <div class="first"></div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="second"></div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="third"></div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="fourth"></div>
+      </div>
+    </div>
+
+    <div class="btns">
+      <div class="start">
+        <button onclick="update()">Start</button>
+      </div>
+      <div class="stop">
+        <button onclick="stop()">Stop</button>
+      </div>
+    </div>
+
+    <script>
+      function update() {
+        var element1 = document.querySelector(".first");
+        var element2 = document.querySelector(".second");
+        var element3 = document.querySelector(".third");
+        var element4 = document.querySelector(".fourth");
+        var width = 1;
+        var height = 1;
+        var identity = setInterval(scene, 10);
+        function scene() {
+          element1.style.width = 150 + "%";
+          element1.style.borderRadius = 30 + "%";
+          element2.style.height = 150 + "%";
+          element2.style.borderRadius = 30 + "%";
+          element3.style.height = 150 + "%";
+          element3.style.borderRadius = 30 + "%";
+          element4.style.width = 150 + "%";
+          element4.style.borderRadius = 30 + "%";
+        }
+      }
+      function stop() {
+        var element1 = document.querySelector(".first");
+        var element2 = document.querySelector(".second");
+        var element3 = document.querySelector(".third");
+        var element4 = document.querySelector(".fourth");
+
+        //var identity = setInterval(scene, 10);
+        //function scene() {
+        element1.style.width = 40 + "px";
+        element1.style.borderRadius = 50 + "%";
+        element2.style.height = 40 + "px";
+        element2.style.borderRadius = 50 + "%";
+        element3.style.height = 40 + "px";
+        element3.style.borderRadius = 50 + "%";
+        element4.style.width = 40 + "px";
+        element4.style.borderRadius = 50 + "%";
+        //}
+      }
+    </script>
+  </body>
+</html>
